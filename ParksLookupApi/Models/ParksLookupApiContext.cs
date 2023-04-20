@@ -13,7 +13,7 @@ namespace ParksLookupApi.Models
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-      builder.Entity<Destination>()
+      builder.Entity<Park>()
         .HasData(
           new Park { ParkId = 1, Name = "Olympic", State = "Washington"},
           new Park { ParkId = 2, Name = "Denali", State = "Alaska"},
