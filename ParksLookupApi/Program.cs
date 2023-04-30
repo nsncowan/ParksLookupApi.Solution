@@ -1,9 +1,16 @@
 using ParksLookupApi.Models;
-using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
-using Microsoft.Extensions.DependencyInjection;
-// ===========================THIS IS THE USING DIRECTIVE FOR VERSIONING============================================
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+// using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Swashbuckle.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,8 +19,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddControllersWithViews()
-    .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+// builder.Services.AddControllersWithViews()
+//     .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 
 builder.Services.AddDbContext<ParksLookupApiContext>(

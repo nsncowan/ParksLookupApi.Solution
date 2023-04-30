@@ -5,7 +5,6 @@ namespace ParksLookupApi.Models
   public class ParksLookupApiContext : DbContext
   {
     public DbSet<Park> Parks { get; set; }
-    // public DbSet<Review> Review { get; set; }
 
     public ParksLookupApiContext(DbContextOptions<ParksLookupApiContext> options) : base(options)
     {
