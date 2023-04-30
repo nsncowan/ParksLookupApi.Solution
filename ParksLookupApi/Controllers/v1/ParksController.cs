@@ -18,9 +18,18 @@ namespace ParksLookupApi.Controllers.V1
     }
 // ========================================================================
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get()
+    public async Task<ActionResult<IEnumerable<Park>>> Get(string parkName, string parkState)
     {
-      return await _db.Parks.ToListAsync();
+      IQueryable<Park> query = _db.Parks.AsQueryable();
+      if (parkName != null)
+      {
+        query = query.Where(entry => entry.Name == parkName);
+      }
+      if (parkState != null)
+      {
+        query = query.Where(entry => entry.State == parkState);
+      }
+      return await query.ToListAsync();
     }
 // ========================================================================
     [HttpGet("{id}")]
