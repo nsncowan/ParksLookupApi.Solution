@@ -18,7 +18,7 @@ namespace ParksLookupApi.Controllers.V1
     }
 // ========================================================================
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get(string parkName, string parkState)
+    public async Task<ActionResult<IEnumerable<Park>>> Get(string parkName, string parkState, int pageNumber = 1, int pageSize = 5)
     {
       IQueryable<Park> query = _db.Parks.AsQueryable();
       if (parkName != null)
@@ -29,7 +29,8 @@ namespace ParksLookupApi.Controllers.V1
       {
         query = query.Where(entry => entry.State == parkState);
       }
-      return await query.ToListAsync();
+      int skip = (pageNumber -1) * pageSize;
+      return await query.Skip(skip).Take(pageSize).ToListAsync();
     }
 // ========================================================================
     [HttpGet("{id}")]
