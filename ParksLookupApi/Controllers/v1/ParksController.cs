@@ -10,13 +10,12 @@ namespace ParksLookupApi.Controllers.V1
   // [ApiVersion("2.0")]
   public class ParksController : ControllerBase
   {
-// ====================================================
     private readonly ParksLookupApiContext _db;
     public ParksController(ParksLookupApiContext db)
     {
       _db = db;
     }
-// ========================================================================
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Park>>> Get(string parkName, string parkState, int pageNumber = 1, int pageSize = 5)
     {
@@ -32,7 +31,7 @@ namespace ParksLookupApi.Controllers.V1
       int skip = (pageNumber -1) * pageSize;
       return await query.Skip(skip).Take(pageSize).ToListAsync();
     }
-// ========================================================================
+
     [HttpGet("{id}")]
     public async Task<ActionResult<Park>> GetPark(int id)
     {
@@ -43,7 +42,7 @@ namespace ParksLookupApi.Controllers.V1
       }
       return park;
     }
-// ========================================================================
+
     [HttpPost]
     public async Task<ActionResult<Park>> Post(Park park)
     {
@@ -51,7 +50,7 @@ namespace ParksLookupApi.Controllers.V1
       await _db.SaveChangesAsync();
       return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
     }
-// ========================================================================
+
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Park park)
     {
@@ -77,12 +76,12 @@ namespace ParksLookupApi.Controllers.V1
       }
       return NoContent();
     }
-// ========================================================================
+
     private bool ParkExists(int id)
     {
       return _db.Parks.Any(park => park.ParkId == id);
     }
-// ========================================================================
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePark(int id)
     {

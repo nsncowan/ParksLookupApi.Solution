@@ -15,12 +15,10 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 
-// builder.Services.AddControllersWithViews()
-//     .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 
 builder.Services.AddDbContext<ParksLookupApiContext>(
@@ -32,10 +30,8 @@ builder.Services.AddDbContext<ParksLookupApiContext>(
                   )
                 );
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// ============================THIS IS THE VERSIONING SERVICES CODE ===========================================
 builder.Services.AddApiVersioning(opt =>
                                     {
                                         opt.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1,0);
@@ -45,10 +41,8 @@ builder.Services.AddApiVersioning(opt =>
                                                                                         new HeaderApiVersionReader("x-api-version"),
                                                                                         new MediaTypeApiVersionReader("x-api-version"));
                                     });
-// =======================================================================
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

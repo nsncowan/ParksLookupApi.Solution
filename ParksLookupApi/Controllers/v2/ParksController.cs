@@ -10,19 +10,18 @@ namespace ParksLookupApi.Controllers.V2
   [ApiVersion("2.0")]
   public class ParksController : ControllerBase
   {
-// ====================================================
     private readonly ParksLookupApiContext _db;
     public ParksController(ParksLookupApiContext db)
     {
       _db = db;
     }
-// ========================================================================
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Park>>> Get()
     {
       return await _db.Parks.ToListAsync();
     }
-// ========================================================================
+
     [HttpGet("{id}")]
     public async Task<ActionResult<Park>> GetPark(int id)
     {
@@ -33,7 +32,7 @@ namespace ParksLookupApi.Controllers.V2
       }
       return park;
     }
-// ========================================================================
+
     [HttpPost]
     public async Task<ActionResult<Park>> Post(Park park)
     {
@@ -41,7 +40,7 @@ namespace ParksLookupApi.Controllers.V2
       await _db.SaveChangesAsync();
       return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
     }
-// ========================================================================
+
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Park park)
     {
@@ -67,12 +66,12 @@ namespace ParksLookupApi.Controllers.V2
       }
       return NoContent();
     }
-// ========================================================================
+
     private bool ParkExists(int id)
     {
       return _db.Parks.Any(park => park.ParkId == id);
     }
-// ========================================================================
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePark(int id)
     {
