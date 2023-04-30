@@ -10,7 +10,7 @@ Noah Cowan, April 2023
 
 ## Description:
 
-This is an MVC web application writted in C#, using the ASP.NET core framework. The app uses Entity Framework Core migrations to build a SQL database. Upon launching the app, a browser window will open to a splash page where a user can follow links to create "Treats" and "Flavors" to populate a bakery inventory app. Using a many-to-many database relationship, the user can assign create "Treats" and "Flavors", and pair them together in any combination. Using Asp.NET's Identity model, the user will be prompted to create an account, and then will be asked to log in before being authorized to create, delete, or edit objects. The user does NOT, however, have to be logged in to view the bakery's inventory. 
+This is an API written in C#. The user can access the API through an API platform such as Swagger (browser-based), or POSTman (standalone). Upon running the API, the user can view, post, edit, and delete entries from a linked database containing a list of US national parks. The items in the list are also searchable by specific data-point.
 ***
 
 ## Technologies Used
@@ -19,11 +19,12 @@ This is an MVC web application writted in C#, using the ASP.NET core framework. 
 - .NET
 - ASP.NET Core
 - Entity Framework Core
-- Razor
 - MySQL Workbench
 - Git
 - Github
 - Markdown
+- Swashbuckle
+- Swagger
 ***
 
 ## Setup/Installation Requirements
