@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "TravelApi": {
+    "ParksLookupApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

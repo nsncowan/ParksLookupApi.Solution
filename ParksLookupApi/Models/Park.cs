@@ -1,5 +1,4 @@
 
-
 namespace ParksLookupApi.Models
 {
   public class Park
