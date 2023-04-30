@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ParksLookupApi.Models;
 
-namespace ParksLookupApi.Controllers.V1
+namespace ParksLookupApi.Controllers.V2
 {
   [ApiController]
   [Route("api/v{version:apiVersion}/[controller]")]
-  [ApiVersion("1.0")]
-  // [ApiVersion("2.0")]
+  // [ApiVersion("1.0")]
+  [ApiVersion("2.0")]
   public class ParksController : ControllerBase
   {
 // ====================================================
