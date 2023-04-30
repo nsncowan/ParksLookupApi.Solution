@@ -35,7 +35,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApiVersioning(opt =>
                                     {
                                         opt.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1,0);
-                                        opt.AssumeDefaultVersionWhenUnspecified = true; // very useful: assumes a default version when client does not specify a version. This will prevent an unspecified version from breaking a client's app.
+                                        opt.AssumeDefaultVersionWhenUnspecified = true;
                                         opt.ReportApiVersions = true;
                                         opt.ApiVersionReader = ApiVersionReader.Combine(new UrlSegmentApiVersionReader(),
                                                                                         new HeaderApiVersionReader("x-api-version"),
