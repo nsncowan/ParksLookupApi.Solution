@@ -1,6 +1,6 @@
-# Pierre's Treats Application 
+# US National Park API 
 
-#### MVC web application to manage a bakery's products!
+#### An API for US national parks!
 
 ## Authored by: 
 
@@ -54,13 +54,7 @@ $ dotnet tool install -g dotnet-script
 6. Replace [uid] and [pwd] with your created SQL username and password respectively (excluding the braces).
 
 ### Create the Database with Entity Framework Migrations
-<!-- 1. Open your terminal to your local root directory and install ef migrations: 
-  run: "dotnet tool install --global dotnet-ef --version 6.0.0"
-2. In the project directory, run the following command to install Entity Framework Core Design:
-  "dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0"
-3. In the same directory, run the following command to install AspNetCore Identity:
-  "dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 6.0.0" -->
-4. `$ dotnet ef database update`
+4. In your project directory, run: `$ dotnet ef database update`
 
 ### Execute the Program
 1. Open the terminal and navigate to the production directory titled Storefront.
