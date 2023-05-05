@@ -40,8 +40,8 @@ $ dotnet tool install -g dotnet-script
 
 ### Repository Setup
 1. Clone this repository.
-2. Open your terminal and navigate to this project's production directory called "Storefront".
-3. Within the Storefront directory, create a file titled appsettings.json
+2. Open your terminal and navigate to this project's production directory called "ParksLookupApi".
+3. Within the ParksLookupApi directory, create a file titled appsettings.json
 4. Open your file editor and navigate to appsettings.json
 5. In the appsettings.json file, paste the following code:
 ```javascript
@@ -54,16 +54,20 @@ $ dotnet tool install -g dotnet-script
 6. Replace [uid] and [pwd] with your created SQL username and password respectively (excluding the braces).
 
 ### Create the Database with Entity Framework Migrations
-1. Open your terminal to your local root directory and install ef migrations: 
+<!-- 1. Open your terminal to your local root directory and install ef migrations: 
   run: "dotnet tool install --global dotnet-ef --version 6.0.0"
 2. In the project directory, run the following command to install Entity Framework Core Design:
   "dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0"
 3. In the same directory, run the following command to install AspNetCore Identity:
-  "dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 6.0.0"
+  "dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 6.0.0" -->
+4. `$ dotnet ef database update`
 
 ### Execute the Program
 1. Open the terminal and navigate to the production directory titled Storefront.
 2. Run `dotnet watch run` in the command line.
+
+### Endpoints
+
 
 ## Known Bugs
 None
